@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
 
    
     // Create a User object with the provided arguments
-    User user(id);
+    User user(&id);
 
     // Example usage of withdraw_funds and view_funds
     user.withdraw_funds(500.0); // Withdraw $500 from the user's account
