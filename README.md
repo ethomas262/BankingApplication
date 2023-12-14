@@ -1,75 +1,49 @@
-This project involves creating a simple banking system with multiple account types and basic transaction functionality.
+# Banking Application
 
-### C++ Banking System Project:
+## Overview
+This C++ program is a simple Banking Application that demonstrates user authentication, account management, and basic transaction functionalities. It utilizes SHA256 hashing for password security and interacts with a hypothetical user authentication database.
 
-#### Project Overview:
+## Prerequisites
+- C++ compiler
+- OpenSSL library for SHA256 hashing (link against `-lssl -lcrypto`)
+- mongocxx driver for c++ 
 
-Create a console-based banking system that supports multiple account types (e.g., savings, checking) and allows users to perform basic transactions such as deposit, withdrawal, and balance inquiry.
+## How to Use
 
-#### Features to Implement:
+1. **Compile the Code:**
+   - Ensure you have a C++ compiler installed.
+   - Link against the OpenSSL library during compilation (`-lssl -lcrypto`).
+   - Compile the program.
 
-1\. **Account Types:**
+2. **Run the Program:**
+   - Execute the compiled binary, providing a username and password as command-line arguments.
 
-   - Implement multiple account types such as savings and checking.
+3. **Program Usage:**
+   - The program checks for the correct number of command-line arguments.
+   - The authentication process is handled by the `authenticateUser` function, which interacts with a user authentication database.
+   - Upon successful authentication, a `User` object is created, and example transactions (`withdraw_funds` and `view_funds`) are performed.
 
-   - Each account type should have its own interest rate, minimum balance requirement, etc.
+4. **Note:**
+   - The `dbURL` in the code needs to be updated with the correct authentication database instance URL.
+   - Ensure OpenSSL library is installed for SHA256 hashing.
 
-2\. **User Authentication:**
+## Important Points
+- The code uses SHA256 hashing for password security.
+- The authentication process is done through the `authenticateUser` function, which communicates with a user authentication database.
+- User account management and transactions are exemplified through the `User` class.
 
-   - Implement a simple user authentication system with user accounts.
+## Dependencies
+- C++ Standard Library
+- OpenSSL Library (for SHA256 hashing)
 
-   - Each user has a unique username and password.
+## Additional Notes
+- The authentication database URL in the code needs to be updated (`dbURL` variable).
+- This code is a basic demonstration and should not be used in a production environment without further security considerations.
 
-3\. **Account Creation:**
+## License
 
-   - Allow users to create different types of accounts.
 
-   - Ensure that usernames are unique.
+## Acknowledgments
+- The program uses SHA256 hashing for secure password handling.
+- The structure of the code allows for further expansion and integration with a complete banking system.
 
-4\. **Transaction Handling:**
-
-   - Enable users to perform transactions such as deposit, withdrawal, and balance inquiry.
-
-   - Implement appropriate checks, such as ensuring sufficient funds for withdrawals.
-
-5\. **Interest Calculation:**
-
-   - Implement periodic interest calculations based on the account type's interest rate.
-
-6\. **User Interface:**
-
-   - Develop a user-friendly console interface to interact with the banking system.
-
-   - Display account details, transaction history, and other relevant information.
-
-7\. **Persistence:**
-
-   - Implement a simple file-based system to persist user accounts and transaction history.
-
-   - Data should be stored securely.
-
-8\. **Error Handling:**
-
-   - Implement robust error handling to handle various scenarios (e.g., incorrect input, insufficient funds).
-
-9\. **Logging:**
-
-   - Implement logging functionality to record important events and transactions.
-
-10\. **Security Considerations:**
-
-    - Ensure secure handling of user data, including password hashing.
-
-#### Project Structure:
-
-Organize your project into multiple classes to represent different entities (e.g., User, Account, Transaction) and use appropriate data structures.
-
-#### Additional Enhancements (Optional):
-
-Consider adding additional features to make your project even more impressive, such as multi-threading for concurrent transactions, enhanced security measures, or incorporating a graphical library for a more visual interface.
-
-#### Conclusion:
-
-This project will not only showcase your proficiency in C++ but also demonstrate your ability to design and implement a more complex system. Additionally, it allows you to practice various programming concepts, including object-oriented design, file handling, and error handling.
-
-Remember to document your code well, follow best practices, and include a README file explaining how to compile and run your banking system. Good luck with your project!
